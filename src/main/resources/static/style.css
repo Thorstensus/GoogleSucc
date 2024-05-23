@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cadetblue;
+    font-family: "Comic Sans MS";
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download {
+    font-family: Impact;
+    font-size: 32px;
+    background-color: red;
+    color: white;
+}
+
+img {
+    margin: 10px;
+}
