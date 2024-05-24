@@ -42,12 +42,12 @@ public class MainController {
   @ResponseBody
   public ResponseEntity<FileSystemResource> download(@RequestParam String query) {
     List<SearchResult> results = googleSuccUtils.fetchSearchResults(query);
-    File file = googleSuccUtils.createJsonTextFile(results, "search_results.txt");
+    File file = googleSuccUtils.createJsonTextFile(results, "search_results.json");
 
     FileSystemResource fileSystemResource = new FileSystemResource(file);
 
     HttpHeaders httpHeaders = new HttpHeaders();
-    httpHeaders.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=search_results.txt");
+    httpHeaders.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=search_results.json");
 
     return ResponseEntity.ok().headers(httpHeaders).body(fileSystemResource);
   }
